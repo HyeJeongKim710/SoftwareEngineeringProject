@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>로그인</title>
+        <style>
+            h1 {
+                color: #424242;
+            }
+            div.loginbox{
+                text-align: center;
+            }
+
+            div.signup_link{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;">Personal Diary</h1>
+        <hr size="5" color="#D8D8D8"><br>
+        <div class="loginbox">
+            <h2>로그인</h2><br>
+                <form action="/login" method="POST">
+                    <input type="text" name="userID" placeholder="아이디를 입력해주세요" style="height: 25px;"><br><br>
+                    <input type="password" name="password" placeholder="비밀번호를 입력해주세요" style="height: 25px;"><br><br>
+                    <input type="submit"  value="로그인"><br><br>
+                </form>
+        </div>
+        <div class="signup_link">
+            <a href="/sign_up">회원가입을 원하시면 여기를 클릭해주세요</a>
+        </div>
+    </body>
+</html>

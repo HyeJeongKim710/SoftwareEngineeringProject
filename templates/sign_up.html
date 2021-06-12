@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>회원가입</title>
+       <style>
+        h1 {
+            color: #424242;
+            text-align: center;
+        }
+        div.signInput{
+            text-align: center;
+        }
+
+    </style>
+    </head>
+    <body>
+        {% if session['logged_in'] %}
+        <p>이미 가입되어 있습니다</p>
+    {% else %}
+    <div class="signInput">
+        <h1>Personal Diary</h1>
+        <hr size="5" color="#D8D8D8"><br>
+        <form action="/sign_up/" method="POST">
+            <h2>회원가입</h2><br>
+            <p>1. 아이디를 입력해주세요</p>
+            <input type="text" name="userID" placeholder="아이디를 입력해주세요" style="height: 25px; width:200px"><br><br>
+            <p>2. 비밀번호를 입력해주세요</p>
+            <input type="password" name="password" placeholder="비밀번호를 입력해주세요" style="height: 25px; width:200px"><br>
+            <br><br>
+            <input type="submit" value="회원가입">
+        </form>
+    </div>
+    {% endif %}
+    </body>
+</html>

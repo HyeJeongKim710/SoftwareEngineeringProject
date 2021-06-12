@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>게시물 추가</title>
+        <style>
+            h1 {
+                color: #424242;
+                text-align: center;
+            }
+            div.addPost{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Personal Diary</h1>
+            <hr size="5" color="#D8D8D8"><br>
+        <div class="addPost">
+            <h2 style="text-align: center;">게시물 추가</h2><br>
+            <form action="/uploader" method="POST" enctype="multipart/form-data">
+                제목: <input type="text" name="title" style="width: 450px;" placeholder="제목을 입력해주세요"><br><br>
+                <!--<input type="file" name="picture" id="picture" onchange="previewImg(event);"/><br>-->
+                <input type="file" style="display: block;" id="input_picture" onchange="readImage(event)">
+                <div class="picture" id="picture_view">
+                    <img  id="preview_picture">
+                </div>
+                <textarea name="contents" placeholder="내용을 입력해주세요"  style="width: 500px; height: 400px"></textarea><br>
+                <input type="submit" value="저장">
+
+            </form>
+
+            <script>
+                function readImage(event) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(event){
+                        var img = document.createElement("img");
+                        img.setAttribute("src", event.target.result);
+                        document.querySelector("div#picture_view").appendChild(img);
+                    };
+                    reader.readAsDataURL(event.target.files[0])
+                }
+            </script>
+        </div>
+    </body>
+</html>

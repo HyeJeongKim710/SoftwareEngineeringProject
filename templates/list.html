@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>게시물 리스트</title>
+        <style>
+            h1 {
+                color: #424242;
+                text-align: center;
+            }
+            div.list{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        {%if session['logged_in'] %}
+            <h1>Personal Diary</h1>
+            <hr size="5" color="#D8D8D8"><br>
+            <div class="list">
+                <div class="diaryList">
+                    <form action="/addPost" method="POST">
+                        {{ name }}님 어서오세요 <input type="submit" value="추가"> <a style="float: right;" href="/logout">로그아웃</a><br><br>
+                    </form>
+
+
+
+                </div>
+            </div>
+        {%endif%}
+    </body>
+</html>
